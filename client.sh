@@ -7,6 +7,8 @@ git clean -f
 echo "开始拉取最新代码"
 git pull origin master
 echo "开始编译代码"
+rm -rf node_modules
+npm install
 npm run build
 echo "开始执行构建"
 docker build -t client-test:1.0 .
